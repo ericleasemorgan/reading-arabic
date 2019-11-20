@@ -8,8 +8,12 @@ XML='./xml'
 # initialize
 $INITIALIZEDB
 
-# do the work for all books
-find $XML -type d -exec $BOOK2DB {} \;
+# initialize titles table
+./bin/unique-titles.sh
+
+# process each desired book
+$BOOK2DB ./xml/bk210_2_3
+#$BOOK2DB ./xml/bk210_2_4
 
 # done
 exit

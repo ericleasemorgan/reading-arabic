@@ -12,17 +12,10 @@
   
 	<xsl:output method="text" />
 
-	<xsl:param name="bid" select="bid"/>
-
 	<xsl:template match='dataroot'>
 		<xsl:for-each select='//title'>
-			<xsl:text>INSERT INTO titles2entries SELECT t.tid, </xsl:text>
-			<xsl:value-of select='$bid' />
-			<xsl:text>, </xsl:text>
-			<xsl:value-of select='./id' />
-			<xsl:text> from titles AS t where t.title is "</xsl:text>
 			<xsl:value-of select='./tit' />
-			<xsl:text>";&#10;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
 		</xsl:for-each>
 	</xsl:template>
 

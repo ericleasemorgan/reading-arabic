@@ -26,13 +26,13 @@ xsltproc --stringparam root "$ROOT" $BOOKINFO2SQL $BOOKINFO | sqlite3 $DATABASE
 # get the id of the newly created record
 BID=$( echo "SELECT bid FROM BOOKS ORDER BY bid DESC LIMIT 1;" | sqlite3 $DATABASE )
 
-# initialize entry records
-xsltproc --stringparam bid "$BID" "$TITLES2SQL" "$TITLES" >&2
-xsltproc --stringparam bid "$BID" "$TITLES2SQL" "$TITLES" | sqlite3 $DATABASE
-
-# update entry records
+# create entry records
 xsltproc --stringparam bid "$BID" "$ENTRIES2SQL" "$ENTRIES" >&2
 xsltproc --stringparam bid "$BID" "$ENTRIES2SQL" "$ENTRIES" | sqlite3 $DATABASE
+
+# create links between the titles and the entries
+xsltproc --stringparam bid "$BID" "$TITLES2SQL" "$TITLES" >&2
+xsltproc --stringparam bid "$BID" "$TITLES2SQL" "$TITLES" | sqlite3 $DATABASE
 
 # done
 exit

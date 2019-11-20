@@ -5,7 +5,7 @@ CREATE TABLE books (
 );
 
 CREATE TABLE titles (
-	tid    INT,
+	tid    INTEGER PRIMARY KEY,
 	bid    INT,
 	title  TEXT
 );
@@ -15,3 +15,10 @@ CREATE TABLE entries (
 	bid    INT,
 	entry  TEXT
 );
+
+CREATE TABLE titles2entries (
+	tid INT,
+	bid INT,
+	eid INT
+);
+
