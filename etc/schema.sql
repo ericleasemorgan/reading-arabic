@@ -5,7 +5,7 @@ CREATE TABLE books (
 );
 
 CREATE TABLE titles (
-	tid    INTEGER PRIMARY KEY,
+	tid    INT,
 	bid    INT,
 	title  TEXT
 );

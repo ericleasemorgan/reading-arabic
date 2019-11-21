@@ -8,8 +8,7 @@ mkdir -p ./tmp
 rm -rf ./tmp/titles.sql
 
 # extract titles
-xsltproc ./etc/list-titles.xsl ./xml/bk210_2_3/title.xml  > ./tmp/titles.sql
-#xsltproc ./etc/list-titles.xsl ./xml/bk210_2_4/title.xml >> ./tmp/titles.txt
+xsltproc ./etc/titles2sql.xsl ./xml/bk210_2_3/title.xml  > ./tmp/titles.sql
 
 # fill the database
 cat ./tmp/titles.sql | sqlite3 ./etc/books.db

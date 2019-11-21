@@ -8,12 +8,9 @@ XML='./xml'
 # initialize
 $INITIALIZEDB
 
-# initialize titles table
-./bin/unique-titles.sh
-
-# process each desired book
-$BOOK2DB ./xml/bk210_2_3
-#$BOOK2DB ./xml/bk210_2_4
+# create table of titles and entries
+./bin/titles2sql.sh
+./bin/entries2sql.sh
 
 # done
 exit

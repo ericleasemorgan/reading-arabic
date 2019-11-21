@@ -12,14 +12,10 @@
   
 	<xsl:output method="text" />
 
-	<xsl:param name="bid" select="bid"/>
-
 	<xsl:template match='dataroot'>
 		<xsl:for-each select='//book'>
-			<xsl:text>INSERT INTO entries ('eid', 'bid', 'entry' ) VALUES ('</xsl:text>
+			<xsl:text>INSERT INTO entries ('eid', 'entry' ) VALUES ('</xsl:text>
 			<xsl:value-of select='./id' />
-			<xsl:text>', '</xsl:text>
-			<xsl:value-of select='$bid' />
 			<xsl:text>', '</xsl:text>
 			<xsl:value-of select='./nass' />
 			<xsl:text>');&#10;</xsl:text>
