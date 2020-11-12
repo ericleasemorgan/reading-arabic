@@ -22,3 +22,11 @@ CREATE TABLE titles2entries (
 	eid INT
 );
 
+CREATE TABLE tokens (
+	did    INT,
+	tid    INT,
+	token  TEXT,
+	lemma  TEXT,
+	pos    TEXT,
+	gloss  TEXT
+);

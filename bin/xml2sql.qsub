@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# xml2sql.qsub - a front-end to xml2sql.pl
+
+# configure qsub
+#$ -N XML2SQL
+#$ -t 1-1000
+#$ -o ./log
+
+# configure bash
+XML='./madamira/output-files'
+TMP='./tmp'
+
+# get a list of all the files to process
+readarray -t FILES < <( find $XML -name "*.xml" )
+
+# using the given task identifier ($SGE_TASK_ID), compute an array element
+ITEM=$(($SGE_TASK_ID-1))
+
+# do the work and done
+./bin/xml2sql.pl ${FILES[$ITEM]} > $TMP/inserts_$ITEM.sql
+exit
+

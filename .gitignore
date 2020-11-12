@@ -1,3 +1,15 @@
 .DS_Store
-xml/B*
+*.eml
+*.webloc
+etc/book.*
+etc/titles.tsv
+log
+madamira
+srcs
 tmp/*
+txt
+x-*
+xml/B*
+zips
+etc/arabic-words.ods
+etc/entries.tsv
