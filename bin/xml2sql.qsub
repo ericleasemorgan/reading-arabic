@@ -4,7 +4,7 @@
 
 # configure qsub
 #$ -N XML2SQL
-#$ -t 1-1000
+#$ -t 1-250
 #$ -o ./log
 
 # configure bash

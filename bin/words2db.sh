@@ -11,7 +11,7 @@
 # configure
 TRANSACTION='./tmp/tokens-transaction.sql'
 INSERTS='./tmp/inserts_*.sql'
-DB='./etc/books.db'
+DB='./etc/tokens.db'
 
 # create transaction
 echo 'BEGIN TRANSACTION;' >  $TRANSACTION

@@ -3,6 +3,7 @@
 *.webloc
 etc/book.*
 etc/titles.tsv
+etc/tokens.db
 log
 madamira
 srcs
