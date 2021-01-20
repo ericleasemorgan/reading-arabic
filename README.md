@@ -12,7 +12,7 @@ Here's the quickest of recipes:
 
 4. Rename the MADAMIRA jar file to madamira.jar; the purpose of renaming the files is to make the system's code easier to read.
 
-5. Do parts-of-speech extraction with the command ./bin/txt2pos.sh; this command will: 1) launch MADAMIRA in server mode, 2) loop through all the files in the ./txt directory, 3) convert each plain text file into a simple XML file, 4) feed the XML file to MADAMIRA, 5) MADAMIRA will do its work, and 6) save the results in the ./madamira/output-files directory; it might be good idea to delete the contents ./madamira/output-files before you begin.
+5. Do parts-of-speech extraction with the command ./bin/txt2pos.sh; this command will: 1) launch MADAMIRA in server mode, 2) loop through all the files in the ./txt directory, 3) convert each plain text file into a simple XML file, 4) feed the XML file to MADAMIRA, 5) MADAMIRA will do its work, and 6) save the results in the ./madamira/output-files directory; it might be a good idea to delete the contents ./madamira/output-files before you begin.
 
 6. Transform the results of the previous step into sets of SQL insert statements with ./bin/xml2sql.sh; the secret sauce in this step is ./bin/xml2sql.pl which uses XPath technology to parse the files resulting from Step #5; the result of this step ought to be sets of files named "inserts_*.sql" in the ./tmp directory. 
 
