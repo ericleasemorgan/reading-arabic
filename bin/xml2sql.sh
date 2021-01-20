@@ -6,6 +6,7 @@
 # (c) University of Notre Dame; distributed under a GNU Public License
 
 # January 13, 2021 - first cut; written because cluster was full
+# January 20, 2021 - modified to work with an older version of Bash
 
 
 # configure
@@ -17,8 +18,11 @@ XML2SQL='./bin/xml2sql.pl'
 ITEM=0
 rm -rf "$TMP/inserts_*"
 
-# get a list of all the files to process
-readarray -t FILES < <( find $XML -name "*.xml" )
+# get a list of all the files to process: see http://bit.ly/3912rxd
+FILES=()
+while IFS=  read -r -d $'\0' FILE; do
+    FILES+=( "$FILE" )
+done < <( find $XML -name "*.xml" -print0 )
 
 # process each file
 for FILE in "${FILES[@]}"; do
